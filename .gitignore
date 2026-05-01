@@ -1,0 +1,21 @@
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Temp
+*.tmp
+temp-*
+debug-*
+verify-*
+analyze-*
+ex-girlfriend/
+whut-刷课.user.js
