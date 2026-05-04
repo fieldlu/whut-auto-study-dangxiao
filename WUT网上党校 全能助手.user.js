@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WUT网上党校 全能助手
 // @namespace    https://gitee.com/fieldlu/wut_assistant
-// @version      1.5.0
+// @version      1.5.1
 // @description  全自动学习+云端题库+多Provider AI答题(DeepSeek/Kimi/ChatGPT/Claude/Gemini/智谱/千问)：视频断点续播/智能跳课、云端查答案/自动答题/强制捕获上传 — 始终自动运行/真人模拟/进度看门狗
 // @author       FieldLu
 // @license      MIT
