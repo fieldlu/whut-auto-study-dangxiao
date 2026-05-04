@@ -21,7 +21,7 @@
     // ☁️ 云端题库配置
     // ==========================================
     const CLOUD = {
-        rawBase: 'https://gitee.com/fieldlu/party-member-treasury/raw/main/qbank',
+        rawBase: 'https://gitee.com/fieldlu/wut_assistant/raw/main/qbank',
         workerBase: 'https://whut-qbank-worker.tianye0126.workers.dev',
         autoAnswerEnabled: true
     };
