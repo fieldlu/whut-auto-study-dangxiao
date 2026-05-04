@@ -11,7 +11,6 @@
 // @grant        GM_xmlhttpRequest
 // @run-at       document-idle
 // @connect      gitee.com
-// @connect      whut-qbank-worker.tianye0126.workers.dev
 // ==/UserScript==
 
 (function() {
@@ -22,7 +21,6 @@
     // ==========================================
     const CLOUD = {
         rawBase: 'https://gitee.com/fieldlu/wut_assistant/raw/main/qbank',
-        workerBase: 'https://whut-qbank-worker.tianye0126.workers.dev',
         autoAnswerEnabled: true
     };
 

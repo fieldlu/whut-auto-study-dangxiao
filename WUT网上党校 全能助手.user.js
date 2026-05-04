@@ -14,7 +14,6 @@
 // @run-at       document-idle
 // @connect      gitee.com
 // @connect      giteeusercontent.com
-// @connect      whut-qbank-worker.tianye0126.workers.dev
 // @connect      api.deepseek.com
 // @connect      api.moonshot.cn
 // @connect      api.openai.com
@@ -34,7 +33,6 @@
 const CLOUD = {
     rawBase: 'https://gitee.com/api/v5/repos/fieldlu/wut_assistant/contents/qbank',
     apiBase: 'https://gitee.com/api/v5/repos/fieldlu/wut_assistant/contents/qbank',
-    workerBase: 'https://whut-qbank-worker.tianye0126.workers.dev',
     giteeToken: (() => {
         const stored = GM_getValue('whut_gitee_token', '');
         return stored || '';
@@ -1651,7 +1649,7 @@ let autoAnswerTimer = null;
                 if (seen.has(k)) return false;
                 seen.add(k); return true;
             });
-            const body = { access_token: CLOUD.giteeToken, content: toBase64(JSON.stringify(unique, null, 2)), message: `自动合并题库：${unique.length} 题`, branch: 'master' };
+            const body = { access_token: CLOUD.giteeToken, content: toBase64(JSON.stringify(unique, null, 2)), message: `自动合并题库：${unique.length} 题`, branch: 'main' };
             if (sha) body.sha = sha;
             const method = sha ? 'PUT' : 'POST';
             const ur = await gmFetch(`${CLOUD.apiBase}/qbank.json`, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
@@ -1759,7 +1757,7 @@ let autoAnswerTimer = null;
             access_token: CLOUD.giteeToken,
             content: toBase64(jsonStr),
             message: `题库更新：${unique.length} 题 [${new Date().toLocaleDateString()}]`,
-            branch: 'master'
+            branch: 'main'
         };
         if (sha) body.sha = sha;
 
@@ -2010,7 +2008,7 @@ let autoAnswerTimer = null;
             const newContent = toBase64(JSON.stringify(config, null, 2));
             const body = {
                 access_token: CLOUD.giteeToken, content: newContent,
-                message: `更新 ${providerId} 密钥`, branch: 'master', sha: info.sha
+                message: `更新 ${providerId} 密钥`, branch: 'main', sha: info.sha
             };
             await gmFetch(`${CLOUD.apiBase}/ai-config.json`, {
                 method: 'PUT', headers: {'Content-Type':'application/json'}, body: JSON.stringify(body)

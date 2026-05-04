@@ -6,8 +6,8 @@
 (async function mergeAndUpload() {
     'use strict';
 
-    const RAW_BASE = 'https://gitee.com/fieldlu/party-member-treasury/raw/master/qbank';
-    const API_BASE = 'https://gitee.com/api/v5/repos/fieldlu/party-member-treasury/contents/qbank';
+    const RAW_BASE = 'https://gitee.com/fieldlu/wut_assistant/raw/main/qbank';
+    const API_BASE = 'https://gitee.com/api/v5/repos/fieldlu/wut_assistant/contents/qbank';
 
     // ⚠️ 在这里填入你的 Gitee 私人令牌（Personal Access Token）
     // 获取方式：gitee.com → 设置 → 私人令牌 → 生成新令牌（勾选 projects 权限）
@@ -94,7 +94,7 @@
         access_token: GITEE_TOKEN,
         content: contentBase64,
         message: `合并题库：${allQuestions.length} 题 [${new Date().toLocaleDateString()}]`,
-        branch: 'master'
+        branch: 'main'
     };
     if (sha) uploadBody.sha = sha;
 
